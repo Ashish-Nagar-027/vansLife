@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { NavLink, Link, useSearchParams } from "react-router-dom";
+import {
+  NavLink,
+  Link,
+  useSearchParams,
+  useLoaderData,
+} from "react-router-dom";
+import { getVans } from "../../components/api";
+
+export function loader() {
+  return getVans();
+}
 
 const Vans = () => {
-  const [vans, setVans] = useState([]);
-
-  useEffect(() => {
-    fetch("/api/vans")
-      .then((res) => res.json())
-      .then((data) => setVans(data.vans));
-  }, []);
+  const vans = useLoaderData();
 
   const [searchParams, setSearchParams] = useSearchParams();
   const typeFilter = searchParams.getAll("type");
