@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link, defer, useLoaderData, Await } from "react-router-dom";
-import { getHostVans } from "../../components/api";
+import { getHostVans } from "../../firebase";
 
 export function loader() {
   return defer({ HostVans: getHostVans() });

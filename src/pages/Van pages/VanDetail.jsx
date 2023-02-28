@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { getVan } from "../../firebase";
 
 const VanDetail = () => {
   const params = useParams();
 
+  console.log();
+
   const [van, setVan] = useState(null);
 
   useEffect(() => {
-    fetch(`/api/vans/${params.id}`)
-      .then((jsonData) => jsonData.json())
-      .then((vanData) => setVan(vanData.vans));
+    async function data() {
+      let data = await getVan(params.id);
+      setVan(data);
+    }
+    data();
   }, [params]);
 
   return (

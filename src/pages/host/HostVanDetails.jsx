@@ -8,6 +8,7 @@ import {
   useNavigate,
   useParams,
 } from "react-router-dom";
+import { getVan } from "../../firebase";
 
 const HostVanDetails = () => {
   const params = useParams();
@@ -15,9 +16,11 @@ const HostVanDetails = () => {
   const [hostedvan, setHostedVan] = useState(null);
 
   useEffect(() => {
-    fetch(`/api/host/vans/${params.id}`)
-      .then((jsonFile) => jsonFile.json())
-      .then((HostedVansData) => setHostedVan(HostedVansData.vans));
+    async function getData() {
+      let data = await getVan(params.id);
+      setHostedVan(data);
+    }
+    getData();
   }, []);
 
   if (!hostedvan) {

@@ -7,10 +7,11 @@ import {
   defer,
   Await,
 } from "react-router-dom";
-import { getVans } from "../../components/api";
+
+import { getAllVans } from "../../firebase";
 
 export function loader() {
-  return defer({ vans: getVans() });
+  return defer({ vans: getAllVans() });
 }
 
 const Vans = () => {
