@@ -17,11 +17,15 @@ const HostVanDetails = () => {
   useEffect(() => {
     fetch(`/api/host/vans/${params.id}`)
       .then((jsonFile) => jsonFile.json())
-      .then((HostedVansData) => setHostedVan(HostedVansData.vans[0]));
+      .then((HostedVansData) => setHostedVan(HostedVansData.vans));
   }, []);
 
   if (!hostedvan) {
-    return <h1>Loading Van Details ...</h1>;
+    return (
+      <div style={{ minHeight: "80vh" }}>
+        <h1>Loading Van Details ...</h1>
+      </div>
+    );
   }
 
   return (

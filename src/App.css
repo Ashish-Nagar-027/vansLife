@@ -398,3 +398,141 @@
   background-color: #161616;
   color: white;
 }
+
+.disabled-btn {
+  background-color: grey;
+  color: #252525;
+}
+
+
+
+.host-reviews {
+  max-width: 90%;
+  margin: 2rem auto;
+  min-height: 70vh;
+}
+
+
+.top-text {
+  margin: 1rem 0rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.graph {
+  margin:  1rem 0rem;
+  min-width: 280px;
+  width: 300px;
+}
+
+
+.review {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   margin: 10px 0px;
+
+}
+
+.info {
+  display: flex;
+  gap: 1rem;
+}
+
+.info .name {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.fallback-h2 {
+  min-height: 80vh;
+}
+
+.host-income {
+  max-width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.review-star {
+  color: #FF8C38;
+
+}
+
+.info-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.transactions {
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+
+
+}
+.transaction {
+  background-color: white;
+  padding: 1rem;
+  border-radius:10px ;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ 
+}
+
+.host-van-dashboard {
+  max-width: 90%;
+  margin: auto;
+}
+
+
+.host-dashboard-earnings,
+.host-dashboard-reviews{
+  background: #FFEAD0;
+  padding: 1rem;
+  margin: 1rem 0rem;
+}
+
+
+
+.host-van-single {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.host-dashboard-earnings{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.host-dashboard-earnings .info  {
+  display: flex;
+  flex-direction: column;
+}
+
+.host-dashboard-reviews {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.top {
+  margin: 2rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.host-van-single {
+  margin: 1rem;
+}
