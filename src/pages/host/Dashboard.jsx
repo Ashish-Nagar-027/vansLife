@@ -28,7 +28,6 @@ export default function Dashboard() {
         </Link>
       </div>
     ));
-
     return (
       <div className="host-vans-list">
         <section>{hostVansEls}</section>

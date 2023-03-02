@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form, useLocation } from "react-router-dom";
 import { loginUser } from "../../components/api";
 import { useNavigate } from "react-router-dom";
@@ -30,10 +30,11 @@ export default function Login() {
 
   const from = location.status?.from || "/host";
 
-  if (data?.token) {
-    console.log(data, from);
-    navigate(from);
-  }
+  useEffect(() => {
+    if (data?.token) {
+      navigate(from, { replace: true });
+    }
+  }, [data]);
 
   return (
     <div
@@ -77,6 +78,7 @@ export default function Login() {
           name="email"
           type="email"
           placeholder="Email address"
+          value="b@b.com"
         />
         <input
           style={{
@@ -87,6 +89,7 @@ export default function Login() {
           name="password"
           type="password"
           placeholder="Password"
+          value="p123"
         />
 
         <button
