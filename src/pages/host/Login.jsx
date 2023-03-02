@@ -6,7 +6,6 @@ import { useActionData } from "react-router-dom";
 import { useNavigation } from "react-router-dom";
 
 export async function action({ request }) {
-  console.log("we are in action funtions");
   const formData = await request.formData();
   const email = formData.get("email");
   const password = formData.get("password");
